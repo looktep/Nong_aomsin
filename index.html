@@ -11,7 +11,10 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #ffebcd;
+            background-image: url('moodeng.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             font-family: 'Indie Flower', cursive;
             text-align: center;
             transition: background-color 0.5s;
@@ -19,6 +22,9 @@
 
         .container {
             position: relative;
+            background: rgba(255, 235, 205, 0.8);
+            padding: 20px;
+            border-radius: 15px;
         }
 
         .header_text {
@@ -57,7 +63,7 @@
             background-color: #444;
             color: white;
             position: absolute;
-            transition: transform 0.2s ease-in-out;
+            transition: transform 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -75,10 +81,10 @@
 
     <script>
         function changeContent() {
-            document.body.style.backgroundColor = "#ffcccb"; // เปลี่ยนพื้นหลังเป็นสีชมพู
+            document.body.style.backgroundColor = "#ffcccb";
             document.querySelector(".header_text").innerHTML = "งี้ดิ่วะ";
             document.getElementById("gifImage").src = "https://media.tenor.com/YTw87WdiaasAAAAi/tkthao219-capoo.gif";
-            document.querySelector(".buttons").style.display = "none"; // ซ่อนปุ่ม
+            document.querySelector(".buttons").style.display = "none";
         }
 
         function moveButton() {
@@ -86,8 +92,8 @@
             let screenWidth = window.innerWidth - button.clientWidth;
             let screenHeight = window.innerHeight - button.clientHeight;
             
-            let randomX = Math.floor(Math.random() * screenWidth);
-            let randomY = Math.floor(Math.random() * screenHeight);
+            let randomX = Math.random() * screenWidth * 0.7;
+            let randomY = Math.random() * screenHeight * 0.7;
 
             button.style.transform = `translate(${randomX}px, ${randomY}px)`;
         }
